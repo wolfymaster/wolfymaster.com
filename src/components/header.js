@@ -13,14 +13,14 @@ const Header = (props) => {
                     <Menu/>
                 </Col>
             </Row>
-            <Row style={ { marginTop: "200px"} }>
+            <Row style={ { marginTop: "100px"} }>
                 <Col sm={{span: 6, offset: 3}}>
-                    <div style={{fontSize: "48px", textAlign: "center"}}>CREATE . EDUCATE . INNOVATE</div>
+                    <div style={{fontSize: "60px", textAlign: "center", color: "#eaebf0", fontWeight: "bold"}}>CREATE . EDUCATE . INNOVATE</div>
                 </Col>
             </Row>
             <Row>
                 <Col sm={{span: 6, offset: 3}}>
-                    <div style={{fontSize: "32px", textAlign: "center"}}>drinkin’ rum and cola underneath the rising
+                    <div style={{fontSize: "32px", textAlign: "center", fontWeight:"300", color:"#eaebf0"}}>drinkin’ rum and cola underneath the rising
                         sun
                     </div>
                 </Col>
