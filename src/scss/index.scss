@@ -1,3 +1,10 @@
+// variables
+$lightRed: #ed6a5a;
+$deepBlue: #08415c;
+$offWhite: #eaebf0;
+$blueGrey: #454851;
+$offBlack: #04080f;
+
 html, body {
   margin: 0;
   padding: 0;
@@ -28,6 +35,14 @@ form {
   }
 }
 
+a {
+  color: $blueGrey;
+  &:hover {
+    text-decoration: none;
+    color: $deepBlue;
+  }
+}
+
 // Top menu navbar
 nav.navbar {
   .dropdown {
@@ -43,7 +58,7 @@ nav.navbar {
 
       .dropdown-item {
         &:hover {
-          background:#454851;
+          background:$blueGrey;
           color:#FFFFFF;
         }
       }
@@ -105,7 +120,7 @@ section#techUncensored {
 }
 
 section#contact {
-  background: linear-gradient(180deg, #85878d 1%, #ed6a5a);
+  background: linear-gradient(180deg, #85878d 1%, $lightRed);
   padding:200px 0 100px;
   color: #FFF;
 
@@ -119,8 +134,8 @@ section#contact {
 }
 
 section#footer {
-  color: #04080f;
-  background: #eaebf0;
+  color: $offBlack;
+  background: $offWhite;
   padding: 20px 0 20px;
   font: {
     size: 12px;
