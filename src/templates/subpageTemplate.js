@@ -10,13 +10,12 @@ import '../scss/subpage.scss';
 const subpageTemplate = ({children, pageContext:{frontmatter}}) => {
 
     let menuBackground = frontmatter.menuBackground || "rgba(167,76,67,0.5)";
-
-    console.log(frontmatter, frontmatter.hasBanner === true);
+    let rowStyle = frontmatter.hasBanner === true ? {background: menuBackground } : {background: "#a74c43"}
 
     return (
         <>
             <Container fluid={true}>
-                <Row style={frontmatter.hasBanner === true ? {background: menuBackground } : {background: "#a74c43"}}>
+                <Row style={Object.assign(rowStyle, {position:"relative"} )}>
                     <Col lg={{span: 4, offset: 8}}>
                         <Menu/>
                     </Col>
