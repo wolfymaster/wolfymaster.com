@@ -19,7 +19,7 @@ import Gallery from 'react-grid-gallery';
 <Container style={{ padding:"50px 0" }}>
     <Row>
         <Col  lg={{span: 10, offset: 1}}>
-            <div style={{ textAlign:"center", fontSize:"28px", fontWeight:"bold", padding:"20px 0" }}>Developers First</div>
+            <div style={{ textAlign:"center", fontSize:"28px", fontWeight:"bold", padding:"20px 0" }}>What A Professional Network Should Be</div>
             <div style={{ textAlign:"center", fontSize:"18px" }}>
             We believe that payments is a problem rooted in code, not finance. We obsessively seek out elegant, composable abstractions that enable robust, scalable, flexible integrations. Because we eliminate needless complexity and extraneous details, you can get up and running with Stripe in just a couple of minutes.
             </div>
@@ -27,84 +27,31 @@ import Gallery from 'react-grid-gallery';
     </Row>
 </Container>
 
-<Container>
+<Container className="bullets">
     <Row>
-        <Col  lg={{span: 10, offset: 1}}>
-            <ul>
-                <li>Grow a private network
-                    <ul>
-                        <li>
-                        organically grow your professional network by connecting with mentors and sharing your expertise across the organization
-                        personal information is hidden by default and only revealed to connections you choose.
-                        </li>
-                    </ul>
-                </li>
-                <li>Find a mentor
-                    <ul>
-                        <li>
-                        connect with someone who can provide advice and insight. You may be looking at growing your career or developing a skill like public speaking.
-                        </li>
-                    </ul>
-                </li>
-                <li>Mentor others
-                    <ul>
-                        <li>
-                        share your knowledge and expertise with your organization by mentoring others.
-                        </li>
-                    </ul>
-                </li>
-                <li>Expand your organization
-                    <ul>
-                        <li>
-                        any professional organization can benefit through a mentoring network. Easily allow your members to grow and connect with one another.
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+        <Col lg={{span:3}}>
+            <div className="bullet">
+                <div className="heading">Build a Network</div>
+                <div className="description">organically grow your professional network by connecting with mentors and sharing your expertise across the organization<br />personal information is hidden by default and only revealed to connections you choose.</div>
+            </div>
         </Col>
-    </Row>
-</Container>
-
-<Container style={{ paddingBottom:"50px" }}>
-    <Row>
-        <Col>
-            <Gallery images={[{
-                                src: "http://placehold.it/300x300",
-                                thumbnail: "http://placehold.it/600x500",
-                                thumbnailWidth: 600,
-                                thumbnailHeight: 600,
-                                isSelected: false,
-                            },{
-                                  src: "http://placehold.it/500x500",
-                                  thumbnail: "http://placehold.it/500x500",
-                                  thumbnailWidth: 500,
-                                  thumbnailHeight: 500,
-                                  isSelected: false,
-                              },
-                          {
-                              src: "http://placehold.it/600x600",
-                              thumbnail: "http://placehold.it/600x900",
-                              thumbnailWidth: 900,
-                              thumbnailHeight: 500,
-                              isSelected: false,
-                          },{
-                              src: "http://placehold.it/500x500",
-                              thumbnail: "http://placehold.it/500x500",
-                              thumbnailWidth: 500,
-                              thumbnailHeight: 500,
-                              isSelected: false,
-                          },
-                          {
-                              src: "http://placehold.it/600x600",
-                              thumbnail: "http://placehold.it/600x900",
-                              thumbnailWidth: 900,
-                              thumbnailHeight: 500,
-                              isSelected: false,
-                          }]}
-                enableImageSelection={false}
-                rowHeight={250}
-                maxRows={3}
-               />
+        <Col lg={{span:3}}>
+            <div className="bullet">
+                <div className="heading">Find a Mentor</div>
+                <div className="description">connect with someone who can provide advice and insight. You may be looking at growing your career or developing a skill like public speaking.</div>
+            </div>
+        </Col>
+        <Col lg={{span:3}}>
+            <div className="bullet">
+                <div className="heading">Mentor Others</div>
+                <div className="description">share your knowledge and expertise with your organization by mentoring others.</div>
+            </div>
+        </Col>
+        <Col lg={{span:3}}>
+            <div className="bullet">
+                <div className="heading">Expand Your Org</div>
+                <div className="description">any professional organization can benefit through a mentoring network. Easily allow your members to grow and connect with one another.</div>
+            </div>
         </Col>
     </Row>
 </Container>
