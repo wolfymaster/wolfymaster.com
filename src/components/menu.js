@@ -11,7 +11,7 @@ const Menu = (props) => {
                 <NavDropdown.Item as={Link} to="/nwpatech">NWPA Tech</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link as={Link} to="/resume">Resume</Nav.Link>
-            <Nav.Link href="http://wolfymaster.design:2368/" target="_blank">Blog</Nav.Link>
+            <Nav.Link href={process.env.GATSBY_BLOG_URL} target="_blank">Blog</Nav.Link>
             <Nav.Link as={Link} to="/hire">Hire Me</Nav.Link>
         </Nav>
     </Navbar>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Row, Col, Container, Navbar, Nav, Button, Carousel} from 'react-bootstrap';
+import {Row, Col, Container, Button} from 'react-bootstrap';
 import AliceCarousel from 'react-alice-carousel';
 import Header from '../components/header';
 import Contact from '../components/contact';
@@ -8,15 +8,22 @@ import GhostContentAPI from '@tryghost/content-api'
 
 import '../scss/index.scss';
 import "react-alice-carousel/lib/alice-carousel.css";
+import {Link} from "gatsby";
 
 const Highlight = () => {
     return <Container style={ {color: "#ed6a5a", fontSize: "24px"} }>
         <Row>
             <Col sm="6">
-                <img src="https://www.rspcasa.org.au/wp-content/uploads/2019/01/Adopt-cat-mobile-banner-600x300-fit-constrain-q70-mobile_banner_image.jpg" height="200px" />
+                <Link to="/mentorerie">
+                    <img src="https://www.rspcasa.org.au/wp-content/uploads/2019/01/Adopt-cat-mobile-banner-600x300-fit-constrain-q70-mobile_banner_image.jpg" height="200px" />
+                </Link>
             </Col>
             <Col sm="6">
-                <div style={ { fontSize: "32px" } }><strong>MentorErie Mentorship Framework</strong></div>
+                <div style={ { fontSize: "32px" } }>
+                    <Link to="/mentorerie">
+                        <strong>Mentorship Framework</strong>
+                    </Link>
+                </div>
                 <div>
                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem.
                 </div>
@@ -24,13 +31,19 @@ const Highlight = () => {
         </Row>
         <Row style={ { marginTop: "50px"} }>
             <Col sm="6">
-                <div style={ { fontSize: "32px" } }><strong>NWPA Tech</strong></div>
+                <div style={ { fontSize: "32px" } }>
+                    <Link to="/nwpatech">
+                        <strong>NWPA Tech</strong>
+                    </Link>
+                </div>
                 <div>
                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem.
                 </div>
             </Col>
             <Col sm="6">
-                <img src="https://www.rspcasa.org.au/wp-content/uploads/2019/01/Adopt-cat-mobile-banner-600x300-fit-constrain-q70-mobile_banner_image.jpg" />
+                <Link to="/nwpatech">
+                    <img src="https://www.rspcasa.org.au/wp-content/uploads/2019/01/Adopt-cat-mobile-banner-600x300-fit-constrain-q70-mobile_banner_image.jpg" />
+                </Link>
             </Col>
         </Row>
     </Container>
@@ -39,7 +52,7 @@ const Highlight = () => {
 const BlogEntries = () => {
     const [articles, setArticles] = useState([]);
     const api = new GhostContentAPI({
-        url: 'http://wolfymaster.design:2368',
+        url: process.env.GATSBY_BLOG_URL,
         key: '3916dd1fc8ec42fa75b51e3505',
         version: 'v2',
     });
@@ -69,7 +82,7 @@ const BlogEntries = () => {
 };
 
 const TechUncensored = () => {
-    const apiURL = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyCfCfHSZZBdy3Ud-mRJ30fzBbKsOIMV0jM&channelId=UC44jpOmnvm-iTfkq-4Jj4CA&part=snippet,id&order=date&maxResults=20"
+    const apiURL = `https://www.googleapis.com/youtube/v3/search?key=${process.env.GATSBY_YOUTUBE_KEY}&channelId=UC44jpOmnvm-iTfkq-4Jj4CA&part=snippet,id&order=date&maxResults=20`
     const [vids, setVids] = useState([]);
 
     useEffect( () => {
