@@ -1,0 +1,40 @@
+// variables
+$lightRed: #ed6a5a;
+$deepBlue: #08415c;
+$offWhite: #eaebf0;
+$blueGrey: #454851;
+$offBlack: #04080f;
+
+.project-header {
+  z-index: -1;
+  position: relative;
+}
+
+.bullets {
+
+  .bullet {
+    background: $offWhite;
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+    padding:10px 20px;
+    border-radius: 20px;
+
+    .heading {
+      color: $blueGrey;
+      font: {
+        size: 18px;
+        weight: bold;
+      }
+      // text-align: center;
+    }
+
+    .description {
+      font: {
+        size: 16px;
+        weight: lighter;
+      }
+      text-align: justify;
+    }
+  }
+}

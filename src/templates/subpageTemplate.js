@@ -4,6 +4,8 @@ import Menu from "../components/menu";
 import Contact from '../components/contact';
 import Footer from '../components/footer';
 
+import '../scss/subpage.scss';
+
 
 const subpageTemplate = ({children, pageContext:{frontmatter}}) => {
 
@@ -21,18 +23,18 @@ const subpageTemplate = ({children, pageContext:{frontmatter}}) => {
                 </Row>
             </Container>
 
-            <Container fluid={frontmatter.hasBanner === true} style={frontmatter.hasBanner === true ? {marginTop:"-56px", zIndex:-1, position:"relative"} : {}}>
+            <Container fluid={frontmatter.hasBanner === true} style={frontmatter.hasBanner === true ? {marginTop:"-56px"} : {}}>
                 <Row>
-                    <div style={ frontmatter.hasBanner === true ? {width:"100%"} : {margin: "50px auto"}}>
+                    <div style={ frontmatter.hasBanner === true ? {width:"100%", marginBottom: "50px"} : {margin: "50px auto"}}>
                         {children}
                     </div>
                 </Row>
             </Container>
 
-            <section id="contact">
+            <section id="contact" className="subpage">
                 <Contact />
             </section>
-            <section id="footer">
+            <section id="footer" className="subpage">
                 <Footer />
             </section>
         </>
