@@ -25,14 +25,6 @@ const Header = (props) => {
                     </div>
                 </Col>
             </Row>
-            <Row  style={ { margin: "50px 0"} }>
-                <Col sm={{span: 2, offset: 4}}>
-                    <Button size="lg" block>Something</Button>
-                </Col>
-                <Col sm={{span: 2}}>
-                    <Button variant="outline-dark" size="lg" block>Something</Button>
-                </Col>
-            </Row>
             <Row style={ { marginTop: "50px", paddingBottom: "50px"} }>
                 <Col sm={{span: 6, offset: 3}}>
                     <iframe width="100%" height="490" src={videoURL+"?rel=0"} frameBorder="0"

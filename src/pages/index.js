@@ -111,31 +111,43 @@ const TechUncensored = () => {
             </Row>
         </Container>
 
-        <section style={ { display: "flex", flexDirection: "row", justifyContent: "space-around" } }>
-            <VideoBlock />
-            <VideoBlock />
-            <VideoBlock />
+        <section style={ { display: "flex", flexDirection: "row", justifyContent: "space-around", padding: "0 50px" } }>
+            { vids.length && <VideoBlock vids={vids.slice(0,3)} /> }
+            { vids.length && <VideoBlock vids={vids.slice(3,6)} /> }
+            { vids.length && <VideoBlock vids={vids.slice(6,9)} /> }
         </section>
     </>
 };
 
-const VideoBlock = () => {
-    return <div className="videoBlock" style={ { width: "570px" } }>
-        <div style={ {background: "url('https://i.ytimg.com/vi/Y_JGMoBli0U/mqdefault.jpg') 100%/100% no-repeat", width: "100%", height: "306px", position: "relative"} } >
+const VideoBlock = (props) => {
+    let {vids} = props;
+    return <div className="videoBlock" style={ { width: "33%" } }>
+        <div style={ {background: `url('${vids[0].snippet.thumbnails.medium.url}') 100%/100% no-repeat`, width: "100%", height: "306px", position: "relative"} } >
             <div style={ { position:"absolute", bottom: "25px", left: "10px", zIndex: 1 } }>
-                <div style={ { color: "#FFF", fontSize: "32px" } }>Video Title</div>
-                <div style={ { color: "#FFF", fontSize: "18px" } }>Video Description</div>
+                <div style={ { color: "#FFF", fontSize: "32px" } }><a style={ { color: "#FFF" } } href={`http://www.youtube.com/watch?v=${vids[0].id.videoId}`} target="_blank">{vids[0].snippet.title}</a></div>
+                <div style={ { color: "#FFF", fontSize: "18px" } }>{vids[0].snippet.description.substr(0,50)}</div>
             </div>
-            <div className="overlay" style={ { "--hue": 200 } } />
+            <div className="overlay" style={ { "--hue": 380 } } />
+            <a className="link-overlay" href={`http://www.youtube.com/watch?v=${vids[0].id.videoId}`} target="_blank" />
         </div>
         <div style={ { display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "5px" } }>
-            <div>
-                <div style={ {background: "url('https://i.ytimg.com/vi/x39rpBO4Aqo/mqdefault.jpg') 100%/100% no-repeat", width: "280px", height: "150px"} } />
-                <div style={ { fontSize: "18px", fontWeight: "bold" } }>Cronjob Something</div>
+            <div className="hscale" style={ { flexGrow: 1, width: "50%" }}>
+                <div style={ {background: `url('${vids[1].snippet.thumbnails.medium.url}') 100%/100% no-repeat`, width: "99%", height: "150px", position: "relative"} }>
+                    <a className="link-overlay" href={`http://www.youtube.com/watch?v=${vids[1].id.videoId}`} target="_blank" />
+                </div>
+                <div className="title" style={ { fontSize: "14px", fontWeight: "bold" } }>
+                    <a href={`http://www.youtube.com/watch?v=${vids[1].id.videoId}`} target="_blank">{vids[1].snippet.title}</a>
+                    <div className="description">{vids[1].snippet.description}</div>
+                </div>
             </div>
-            <div>
-                <div style={ {background: "url('https://i.ytimg.com/vi/UeRix1gHwRE/mqdefault.jpg') 100%/100% no-repeat", width: "280px", height: "150px"} } />
-                <div style={ { fontSize: "18px", fontWeight: "bold" } }>Cronjob Something</div>
+            <div className="hscale" style={ { flexGrow: 1, width: "50%" }}>
+                <div style={ {background: `url('${vids[2].snippet.thumbnails.medium.url}') 100%/100% no-repeat`, width: "99%", height: "150px", position: "relative"} }>
+                    <a className="link-overlay" href={`http://www.youtube.com/watch?v=${vids[1].id.videoId}`} target="_blank" />
+                </div>
+                <div className="title" style={ { fontSize: "14px", fontWeight: "bold" } }>
+                    <a href={`http://www.youtube.com/watch?v=${vids[2].id.videoId}`} target="_blank">{vids[2].snippet.title}</a>
+                    <div className="description">{vids[2].snippet.description}</div>
+                </div>
             </div>
         </div>
     </div>
