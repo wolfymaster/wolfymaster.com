@@ -90,7 +90,6 @@ section#blogEntries {
 
 section#techUncensored {
   background: linear-gradient(180deg, #0d1118 40%, #53565d, #85878d);
-  padding-top: 100px;
   min-height:800px;
   color: #FFF;
 
@@ -104,7 +103,8 @@ section#techUncensored {
   }
 
   #spotify {
-    margin-top:50px;
+    // margin-top:50px;
+    align-items: center;
   }
 
   #techUncensored-videos {
@@ -158,5 +158,27 @@ section#footer {
         margin: 0;
       }
     }
+  }
+}
+
+.diag {
+  background: linear-gradient(-60deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 70%, transparent 80%)
+}
+
+.rev-diag {
+  background: linear-gradient(60deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 70%, transparent 80%)
+}
+
+.videoBlock {
+  .overlay-blue {
+    --hue: blue;
+  }
+  .overlay {
+    position:absolute;
+    top: -2px;
+    left: -2px;
+    bottom: -2px;
+    right: -2px;
+    background-image: linear-gradient(15deg, hsla(var(--hue), 50%, 40%, 1) 5%, hsla(var(--hue), 50%, 40%, 0) 75%), radial-gradient(circle at center bottom, hsla(var(--hue), 100%, 60%, 0.4) 10%, hsla(var(--hue), 100%, 60%, 0) 60%), linear-gradient(345deg, rgba(0, 0, 0, 0.25) 5%, transparent 25%);
   }
 }

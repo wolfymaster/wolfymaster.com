@@ -11,39 +11,39 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import {Link} from "gatsby";
 
 const Highlight = () => {
-    return <Container style={ {color: "#ed6a5a", fontSize: "24px"} }>
-        <Row>
-            <Col sm="6">
-                <Link to="/mentorerie">
-                    <img src="https://www.rspcasa.org.au/wp-content/uploads/2019/01/Adopt-cat-mobile-banner-600x300-fit-constrain-q70-mobile_banner_image.jpg" height="200px" />
-                </Link>
-            </Col>
-            <Col sm="6">
-                <div style={ { fontSize: "32px" } }>
-                    <Link to="/mentorerie">
-                        <strong>Mentorship Framework</strong>
-                    </Link>
-                </div>
-                <div>
-                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem.
+    return <Container style={ {color: "#ed6a5a", fontSize: "24px"} } fluid={true}>
+
+        <Row style={ { background: "url('https://www.solidbackgrounds.com/images/website/950x534/950x534-blue-stained-glass-free-website-background-image.jpg') 100%/100% no-repeat"} }>
+            <Col>
+                <div style={ { width: "100%", height: "400px", position: "relative", display: "flex",  }}>
+                    <div className="diag" style={ {width: "70%", height:"100%", right:0, alignSelf: "center", display: "flex", alignItems: "center", justifyContent: "center", position: "absolute", marginRight:"-15px", flexDirection: "column" } }>
+                        <div style={ { fontSize: "48px" } }>
+                            <Link to="/mentorerie">
+                                <span style={{ color:"#FFF" }}><strong>Mentorship Framework</strong></span>
+                            </Link>
+                        </div>
+                        <div>
+                            Professional development for your organization
+                        </div>
+                    </div>
                 </div>
             </Col>
         </Row>
-        <Row style={ { marginTop: "50px"} }>
-            <Col sm="6">
-                <div style={ { fontSize: "32px" } }>
-                    <Link to="/nwpatech">
-                        <strong>NWPA Tech</strong>
-                    </Link>
+
+        <Row style={ {background: "url('https://cdn.wallpapersafari.com/84/60/iOwtxg.jpg') 100%/100% no-repeat" } }>
+            <Col>
+                <div style={ { width: "100%", height: "400px", position: "relative", display: "flex",  }}>
+                    <div className="rev-diag" style={ {width: "70%", height:"100%", alignSelf: "center", display: "flex", alignItems: "center", justifyContent: "center", paddingLeft: "100px", marginLeft: "-15px", flexDirection: "column" } }>
+                        <div style={ { fontSize: "48px" } }>
+                            <Link to="/nwpatech">
+                                <span style={{ color:"#FFF" }}><strong>NWPA Tech</strong></span>
+                            </Link>
+                        </div>
+                        <div>
+                            Exploring technology education
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem.
-                </div>
-            </Col>
-            <Col sm="6">
-                <Link to="/nwpatech">
-                    <img src="https://www.rspcasa.org.au/wp-content/uploads/2019/01/Adopt-cat-mobile-banner-600x300-fit-constrain-q70-mobile_banner_image.jpg" />
-                </Link>
             </Col>
         </Row>
     </Container>
@@ -96,47 +96,59 @@ const TechUncensored = () => {
     return <>
         <Container>
             <Row>
-                <Col className="" md="6" lg="2">
-
-                </Col>
-                <Col className="" md="6" lg={{span: 6, offset: 6}}>
-                    <h3>Join the Tech Uncensored Community</h3>
-                    <Row>
-                        <Col sm="6">
-                            <Button size="lg" block>Something</Button>
-                        </Col>
-                        <Col sm="6">
-                            <Button variant="outline-dark" size="lg" block>Something</Button>
-                        </Col>
-                    </Row>
-                    <Row id="spotify">
+                <Col className="" md="12" lg="12">
+                    <Row id="spotify" style={ { alignContent: "center" } }>
                         <Col>
-                            <iframe title="Spotify" src="https://open.spotify.com/embed/show/3yMZnF0xnB1r07PT7V8Dpl" width="100%" height="300" frameBorder="0" scrolling="yes" allow="encrypted-media" />
+                            <h3>Join the Tech Uncensored Community</h3>
+                        </Col>
+                        <Col>
+                            <div style={ { display: "flex", width: "100%", height: "300px" } }>
+                                <iframe title="Spotify" src="https://open.spotify.com/embed/show/3yMZnF0xnB1r07PT7V8Dpl" width="100%" height="300" frameBorder="0" scrolling="yes" allow="encrypted-media" style={ { height: "235px", alignSelf: "center" } } />
+                            </div>
                         </Col>
                     </Row>
                 </Col>
             </Row>
         </Container>
-        <Container fluid="true">
-            <Row id="techUncensored-videos">
-                <Col sm="12">
-                    <AliceCarousel dotsDisabled={true} responsive={ { 0: { items: 4 }} } infinite={false}>
-                        { vids.map((v, k) => <a key={k} href={`http://www.youtube.com/watch?v=${v.id.videoId}`} target="_blank"><img src={v.snippet.thumbnails.medium.url} key={k} /></a> ) }
-                    </AliceCarousel>
-                </Col>
-            </Row>
-        </Container>
+
+        <section style={ { display: "flex", flexDirection: "row", justifyContent: "space-around" } }>
+            <VideoBlock />
+            <VideoBlock />
+            <VideoBlock />
+        </section>
     </>
 };
+
+const VideoBlock = () => {
+    return <div className="videoBlock" style={ { width: "570px" } }>
+        <div style={ {background: "url('https://i.ytimg.com/vi/Y_JGMoBli0U/mqdefault.jpg') 100%/100% no-repeat", width: "100%", height: "306px", position: "relative"} } >
+            <div style={ { position:"absolute", bottom: "25px", left: "10px", zIndex: 1 } }>
+                <div style={ { color: "#FFF", fontSize: "32px" } }>Video Title</div>
+                <div style={ { color: "#FFF", fontSize: "18px" } }>Video Description</div>
+            </div>
+            <div className="overlay" style={ { "--hue": 200 } } />
+        </div>
+        <div style={ { display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "5px" } }>
+            <div>
+                <div style={ {background: "url('https://i.ytimg.com/vi/x39rpBO4Aqo/mqdefault.jpg') 100%/100% no-repeat", width: "280px", height: "150px"} } />
+                <div style={ { fontSize: "18px", fontWeight: "bold" } }>Cronjob Something</div>
+            </div>
+            <div>
+                <div style={ {background: "url('https://i.ytimg.com/vi/UeRix1gHwRE/mqdefault.jpg') 100%/100% no-repeat", width: "280px", height: "150px"} } />
+                <div style={ { fontSize: "18px", fontWeight: "bold" } }>Cronjob Something</div>
+            </div>
+        </div>
+    </div>
+}
 
 const homepage = () => {
     return <>
         <Header videoURL="https://www.youtube.com/embed/pgwxSwitnd8" />
-        <section style={{background: "#eaebf0", padding:"100px 0"}}>
-            <Highlight/>
-        </section>
         <section id="blogEntries">
             <BlogEntries/>
+        </section>
+        <section style={{background: "#eaebf0", padding:"0 0 0 0"}}>
+            <Highlight/>
         </section>
         <section id="techUncensored">
             <TechUncensored/>
