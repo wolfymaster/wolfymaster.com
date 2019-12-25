@@ -33,6 +33,9 @@ jobs:
         
       - name: Gatsby build
         run: gatsby build
+        env:
+          GATSBY_BLOG_URL: ${{ secrets.GATSBY_BLOG_URL }}
+          GATSBY_YOUTUBE_KEY: ${{ secrets.GATSBY_YOUTUBE_KEY }}
         
       - name: Publish to s3
         uses: jakejarvis/s3-sync-action@master
