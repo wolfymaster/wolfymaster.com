@@ -21,10 +21,12 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v1
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         
-      - name: npm install
+      - name: install gatsby cli
+          uses = "actions/npm@master"
+          args = "install"
         run: |
           npm install -g gatsby-cli
           npm install
