@@ -24,6 +24,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v1
         
+      - name: npm install
+        run: npm install
+        
+      - name: Gatsby build
+        run: gatsby build
+        
       - name: Publish to s3
         uses: jakejarvis/s3-sync-action@master
         with:
