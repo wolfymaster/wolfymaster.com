@@ -3,9 +3,9 @@ import React from "react";
 
 const decodeEntities = (function() {
     // this prevents any overhead from creating the object each time
-    var element = document.createElement('div');
+    const element = typeof document !== `undefined` ? document.createElement('div') : null;
 
-    function decodeHTMLEntities (str) {
+    return (str) => {
         if(str && typeof str === 'string') {
             // strip script/html tags
             str = str.replace(/<script[^>]*>([\S\s]*?)<\/script>/gmi, '');
@@ -14,11 +14,8 @@ const decodeEntities = (function() {
             str = element.textContent;
             element.textContent = '';
         }
-
         return str;
-    }
-
-    return decodeHTMLEntities;
+    };
 })();
 
 const VideoBlock = (props) => {

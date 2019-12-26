@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import {Row, Col, Container, Button} from 'react-bootstrap';
+import React from 'react';
 import Header from '../components/header';
 import BlogEntries from '../components/blogentries';
 import Highlight from '../components/highlight';
