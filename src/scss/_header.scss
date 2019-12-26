@@ -1,0 +1,65 @@
+header {
+  background: linear-gradient(165deg, $lightRed 60%, $blueGrey 40%);
+
+  .topMenu {
+    background: #a74c43;
+  }
+
+  .tagline_container {
+    margin-top: 20px;
+
+    .tagline {
+      font: {
+        size: 70px;
+        weight: bold;
+      }
+      text-align: left;
+      color: $offWhite;
+
+      @media (min-width: $tablet) {
+        font-size: 50px;
+        text-align: center;
+      }
+
+      @media (min-width: $desktop) {
+        font-size: 60px;
+      }
+    }
+
+    @media (min-width: $tablet) {
+      margin-top: 100px;
+    }
+  }
+
+  .motto {
+    font: {
+      size: 32px;
+      weight: 300;
+    }
+    text-align: left;
+    color: $offWhite;
+
+    @media (min-width: $tablet) {
+      font-size: 24px;
+      text-align: center;
+    }
+
+    @media (min-width: $desktop) {
+      font-size: 32px;
+    }
+  }
+
+  .video {
+    margin-top: 50px;
+    padding-bottom: 50px;
+    height: 250px;
+
+    @media (min-width: $tablet) {
+      height: 300px;
+    }
+
+    @media (min-width: $desktop) {
+      height: 490px;
+    }
+  }
+}

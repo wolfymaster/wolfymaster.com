@@ -4,12 +4,12 @@ import React from "react";
 const Contact = () => {
     return <Container>
         <Row>
-            <Col className="cta">
+            <Col className="cta" sm={12} md={6}>
                 Let's talk<br />
                 about your<br />
                 project.
             </Col>
-            <Col>
+            <Col sm={12} md={6}>
                 <form action="">
                     <input type="text" name="name" placeholder="Your Name" />
                     <input type="text" name="email" placeholder="Email" />

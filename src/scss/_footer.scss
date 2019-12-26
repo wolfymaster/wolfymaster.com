@@ -1,0 +1,66 @@
+section#contact {
+  background: linear-gradient(180deg, #85878d 1%, $lightRed);
+  padding:200px 0 100px;
+  color: #FFF;
+
+  .cta {
+    text-align:center;
+
+    font: {
+      size: 60px;
+      weight: 700;
+    }
+    line-height: 70px;
+
+    @media (min-width: $tablet) {
+      text-align: left;
+    }
+  }
+
+  form {
+    input, textarea {
+      &::placeholder {
+        color: #CCC;
+      }
+      display:block;
+      width: 100%;
+      padding: 5px;
+      margin:10px 0;
+      background: transparent;
+      border: 2px solid white;
+      color: #FFF;
+    }
+
+    @media (min-width: $tablet) {
+      margin-top: -50px;
+    }
+  }
+}
+
+section#footer {
+  color: $offBlack;
+  background: $offWhite;
+  padding: 20px 0 20px;
+  font: {
+    size: 12px;
+    weight: 700;
+  }
+  text-align: center;
+
+  .social {
+    margin-bottom: 10px;
+
+    div {
+      /*
+      background: #08415c;
+      padding:25px;
+      border-radius:50%;
+      */
+      margin-left: 10px;
+
+      &:first-of-type {
+        margin: 0;
+      }
+    }
+  }
+}

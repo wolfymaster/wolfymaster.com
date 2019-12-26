@@ -1,9 +1,12 @@
-// variables
-$lightRed: #ed6a5a;
-$deepBlue: #08415c;
-$offWhite: #eaebf0;
-$blueGrey: #454851;
-$offBlack: #04080f;
+// imports
+@import "vars";
+@import "header";
+@import "navbar";
+@import "blogentries";
+@import "highlight";
+@import "techuncensored";
+@import "videoblock";
+@import "footer";
 
 html, body {
   margin: 0;
@@ -18,209 +21,11 @@ img {
   max-height: 100%;
 }
 
-form {
-  margin-top: -50px;
-
-  input, textarea {
-    &::placeholder {
-      color: #CCC;
-    }
-    display:block;
-    width: 100%;
-    padding: 5px;
-    margin:10px;
-    background: transparent;
-    border: 2px solid white;
-    color: #FFF;
-  }
-}
-
 a {
   color: $blueGrey;
   &:hover {
     text-decoration: none;
     color: $deepBlue;
-  }
-}
-
-// Top menu navbar
-nav.navbar {
-  .dropdown {
-    .dropdown-toggle {
-      &::after {
-        display: none;
-      }
-    }
-
-    .dropdown-menu {
-      box-shadow: 1px 0 5px #AAA;
-      border: none;
-
-      .dropdown-item {
-        &:hover {
-          background:$blueGrey;
-          color:#FFFFFF;
-        }
-      }
-    }
-  }
-}
-
-section#blogEntries {
-  .entry {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 100%;
-    height: 300px;
-
-    &:hover {
-      a {
-        font-size: 40px;
-        transition: font-size 100ms;
-      }
-    }
-
-    a {
-      color: #FFF;
-      text-decoration: none;
-
-    }
-  }
-}
-
-section#techUncensored {
-  background: linear-gradient(180deg, #0d1118 40%, #53565d, #85878d);
-  min-height:800px;
-  color: #FFF;
-
-  h3 {
-    font: {
-      size: 40px;
-      weight: 400;
-    }
-    padding: 20px;
-    text-align: center;
-  }
-
-  #spotify {
-    // margin-top:50px;
-    align-items: center;
-  }
-
-  #techUncensored-videos {
-    padding:20px 0;
-
-    .alice-carousel {
-      li {
-        padding:0 5px;
-      }
-    }
-
-  }
-}
-
-section#contact {
-  background: linear-gradient(180deg, #85878d 1%, $lightRed);
-  padding:200px 0 100px;
-  color: #FFF;
-
-  .cta {
-    font: {
-      size: 60px;
-      weight: 700;
-    }
-    line-height: 70px;
-  }
-}
-
-section#footer {
-  color: $offBlack;
-  background: $offWhite;
-  padding: 20px 0 20px;
-  font: {
-    size: 12px;
-    weight: 700;
-  }
-  text-align: center;
-
-  .social {
-    margin-bottom: 10px;
-
-    div {
-      /*
-      background: #08415c;
-      padding:25px;
-      border-radius:50%;
-      */
-      margin-left: 10px;
-
-      &:first-of-type {
-        margin: 0;
-      }
-    }
-  }
-}
-
-.diag {
-  background: linear-gradient(-60deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 70%, transparent 80%)
-}
-
-.rev-diag {
-  background: linear-gradient(60deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 70%, transparent 80%)
-}
-
-.videoBlock {
-  .overlay-blue {
-    --hue: blue;
-  }
-  .overlay {
-    position:absolute;
-    top: -2px;
-    left: -2px;
-    bottom: -2px;
-    right: -2px;
-    background-image: linear-gradient(15deg, hsla(var(--hue), 50%, 40%, 1) 5%, hsla(var(--hue), 50%, 40%, 0) 75%), radial-gradient(circle at center bottom, hsla(var(--hue), 100%, 60%, 0.4) 10%, hsla(var(--hue), 100%, 60%, 0) 60%), linear-gradient(345deg, rgba(0, 0, 0, 0.25) 5%, transparent 25%);
-  }
-}
-
-.hscale {
-  transform: scale(1);
-  transition: transform 200ms;
-  z-index: auto;
-
-  &:hover {
-    transform: scale(1.25);
-    transition: transform 200ms;
-    transition-timing-function: linear;
-    z-index: 99;
-
-    .title {
-      background: white;
-      padding: 5px;
-      transition: background 1s;
-
-      .description {
-        display: block;
-        transition: display 1s;
-      }
-    }
-  }
-
-  .title {
-    background: transparent;
-    width: 99%;
-    transition: background 100ms;
-    position: absolute;
-
-    .description {
-      margin-top: 10px;
-      display: none;
-      color: $blueGrey;
-      font: {
-        size: 11px;
-        weight: normal;
-      }
-    }
   }
 }
 

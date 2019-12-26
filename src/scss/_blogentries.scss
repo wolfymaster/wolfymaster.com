@@ -1,0 +1,21 @@
+section#blogEntries {
+  .entry {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100%;
+    height: 300px;
+
+    &:hover {
+      a {
+        font-size: 40px;
+        transition: font-size 100ms;
+      }
+    }
+
+    a {
+      color: #FFF;
+      text-decoration: none;
+
+    }
+  }
+}
