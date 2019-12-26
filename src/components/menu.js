@@ -23,7 +23,7 @@ const leaveMouse = (e) => {
 };
 
 const Menu = (props) => {
-    return <Navbar sticky="top" variant="dark" fixed="top">
+    return <Navbar sticky="top" variant="dark">
         <Nav>
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <NavDropdown title="Projects" id="basic-nav-dropdown" onMouseOver={enterMouse} onMouseOut={leaveMouse}>

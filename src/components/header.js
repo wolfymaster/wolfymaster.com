@@ -7,12 +7,14 @@ const Header = (props) => {
     let { videoURL } = props;
 
     return <header>
-        <Container fluid={true}>
-            <Row className="topMenu">
-                <Col lg={{span: 6, offset: 8}}>
+        <div className="topMenu">
+            <Container>
+                <Row>
                     <Menu/>
-                </Col>
-            </Row>
+                </Row>
+            </Container>
+        </div>
+        <Container fluid={true}>
             <Row className="tagline_container">
                 <Col>
                     <div className="tagline">CREATE . EDUCATE . INNOVATE</div>

@@ -14,13 +14,15 @@ const subpageTemplate = ({children, pageContext:{frontmatter}}) => {
 
     return (
         <>
-            <Container fluid={true}>
-                <Row style={Object.assign(rowStyle, {position:"relative"} )}>
-                    <Col lg={{span: 4, offset: 8}}>
-                        <Menu/>
-                    </Col>
-                </Row>
-            </Container>
+            <header>
+                <div className="topMenu" style={Object.assign(rowStyle, {position:"relative"} )}>
+                    <Container>
+                        <Row>
+                            <Menu/>
+                        </Row>
+                    </Container>
+                </div>
+            </header>
 
             <Container fluid={frontmatter.hasBanner === true} style={frontmatter.hasBanner === true ? {marginTop:"-56px"} : {}}>
                 <Row>

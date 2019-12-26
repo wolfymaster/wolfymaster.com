@@ -3,6 +3,12 @@ header {
 
   .topMenu {
     background: #a74c43;
+
+    .navbar {
+      @media (min-width: $tablet) {
+        margin: auto 0 auto auto;
+      }
+    }
   }
 
   .tagline_container {
