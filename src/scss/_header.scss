@@ -5,6 +5,8 @@ header {
     background: #a74c43;
 
     .navbar {
+      margin: auto;
+
       @media (min-width: $tablet) {
         margin: auto 0 auto auto;
       }
