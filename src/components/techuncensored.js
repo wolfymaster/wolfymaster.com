@@ -3,13 +3,18 @@ import {Col, Container, Row} from "react-bootstrap";
 import VideoBlock from './videoblock';
 
 const TechUncensored = () => {
-    const apiURL = `https://www.googleapis.com/youtube/v3/search?key=${process.env.GATSBY_YOUTUBE_KEY}&channelId=UC44jpOmnvm-iTfkq-4Jj4CA&part=snippet,id&order=date&maxResults=20`
+    const apiURL = `https://www.googleapis.com/youtube/v3/search?key=${process.env.GATSBY_YOUTUBE_KEY}&channelId=UC44jpOmnvm-iTfkq-4Jj4CA&part=snippet,id&order=date&maxResults=20`;
     const [vids, setVids] = useState([]);
 
     useEffect( () => {
         fetch(apiURL)
             .then(res => res.json())
             .then( vids => {
+                if(vids.error) {
+                    // YT API failed to fetch videos
+                    console.error(vids.error);
+                    console.error(vids.error.message);
+                }
                 vids.items && setVids(vids.items.filter( i => i.id.kind === "youtube#video"));
             });
     }, []);
@@ -34,9 +39,9 @@ const TechUncensored = () => {
 
         <Container className="videoBlocks" fluid={true}>
             <Row>
-                { vids.length && <VideoBlock vids={vids.slice(0,3)} /> }
-                { vids.length && <VideoBlock vids={vids.slice(3,6)} /> }
-                { vids.length && <VideoBlock vids={vids.slice(6,9)} /> }
+                { vids.length > 0 && <VideoBlock vids={vids.slice(0,3)} /> }
+                { vids.length > 0 && <VideoBlock vids={vids.slice(3,6)} /> }
+                { vids.length > 0 && <VideoBlock vids={vids.slice(6,9)} /> }
             </Row>
         </Container>
     </>

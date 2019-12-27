@@ -18,6 +18,16 @@ const decodeEntities = (function() {
     };
 })();
 
+const summary = (description, length) => {
+    let substr = description.substr(0, length);
+    while(substr[substr.length-1] !== ' ' && substr.length > 0) {
+        substr = substr.substr(0, substr.length -1);
+    }
+    substr += " ...";
+
+    return substr;
+};
+
 const VideoBlock = (props) => {
     let {vids} = props;
     return <Col sm={12} md={4}>
@@ -26,7 +36,7 @@ const VideoBlock = (props) => {
                 <div className="mainVideo" style={ {background: `url('${vids[0].snippet.thumbnails.medium.url}') 100%/100% no-repeat` } } >
                     <div className="mainVideo_wrapper">
                         <div className="mainVideo_title"><a href={`http://www.youtube.com/watch?v=${vids[0].id.videoId}`} target="_blank">{decodeEntities(vids[0].snippet.title)}</a></div>
-                        <div className="mainVideo_description">{vids[0].snippet.description.substr(0,50)}</div>
+                        <div className="mainVideo_description">{summary(vids[0].snippet.description, 100)}</div>
                     </div>
                     <div className="overlay" style={ { "--hue": 380 } } />
                     <a className="link-overlay" href={`http://www.youtube.com/watch?v=${vids[0].id.videoId}`} target="_blank" />
@@ -34,7 +44,7 @@ const VideoBlock = (props) => {
             </Col>
         </Row>
         <Row className="subVideo">
-            <Col sm={12} md={6}>
+            <Col md={12} lg={6}>
                 <div className="video">
                     <div className="subVideo_bg" style={ {background: `url('${vids[1].snippet.thumbnails.medium.url}') 100%/100% no-repeat` } }>
                         <a className="link-overlay" href={`http://www.youtube.com/watch?v=${vids[1].id.videoId}`} target="_blank" />
@@ -45,7 +55,7 @@ const VideoBlock = (props) => {
                     </div>
                 </div>
             </Col>
-            <Col sm={12} md={6}>
+            <Col md={12} lg={6}>
                 <div className="video">
                     <div className="subVideo_bg" style={ {background: `url('${vids[2].snippet.thumbnails.medium.url}') 100%/100% no-repeat` } }>
                         <a className="link-overlay" href={`http://www.youtube.com/watch?v=${vids[2].id.videoId}`} target="_blank" />

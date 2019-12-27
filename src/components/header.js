@@ -22,7 +22,7 @@ const Header = (props) => {
             </Row>
             <Row>
                 <Col lg={{span: 6, offset: 3}}>
-                    <div className="motto">drinkin’ rum and cola underneath the rising sun</div>
+                    <div className="motto">#code #programming #learning</div>
                 </Col>
             </Row>
             <Row>
