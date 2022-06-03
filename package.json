@@ -14,7 +14,7 @@
     "@tryghost/content-api": "^1.2.9",
     "dotenv": "^8.2.0",
     "gatsby": "^2.0.33",
-    "gatsby-plugin-mdx": "^1.0.47",
+    "gatsby-plugin-mdx": "^2.14.1",
     "gatsby-plugin-page-creator": "^2.1.30",
     "gatsby-plugin-react-helmet": "^3.0.1",
     "gatsby-plugin-sass": "^2.0.3",
