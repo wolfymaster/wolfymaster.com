@@ -10,29 +10,27 @@ module.exports = async (
 
   pageContextOptions.mobileMenu = await queryMobileMenu({ graphql })
 
-  const result = await graphql(`
-    {
-      allArticle(
-        filter: { draft: { ne: true } }
-        sort: { fields: [date, title], order: DESC }
-        limit: 1000
-      ) {
-        edges {
-          node {
-            id
-            slug
-            link
-            category {
-              id
-            }
-            tags {
-              id
-            }
-          }
+  const result = await graphql(`{
+  allArticle(
+    filter: {draft: {ne: true}}
+    sort: [{date: DESC}, {title: ASC}]
+    limit: 1000
+  ) {
+    edges {
+      node {
+        id
+        slug
+        link
+        category {
+          id
+        }
+        tags {
+          id
         }
       }
     }
-  `)
+  }
+}`)
 
   if (result.errors) {
     reporter.panic(result.errors)
