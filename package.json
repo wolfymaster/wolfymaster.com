@@ -2,34 +2,16 @@
   "name": "wolfymaster.com",
   "description": "WolfyMaster.com Gatsby",
   "license": "MIT",
+  "author": "wolfy",
   "scripts": {
     "develop": "gatsby develop",
     "start": "npm run develop",
     "build": "gatsby build",
     "serve": "gatsby serve"
   },
-  "dependencies": {
-    "@mdx-js/mdx": "^1.5.0",
-    "@mdx-js/react": "^1.5.0",
-    "@tryghost/content-api": "^1.2.9",
-    "dotenv": "^8.2.0",
-    "gatsby": "^2.0.33",
-    "gatsby-plugin-mdx": "^1.0.47",
-    "gatsby-plugin-page-creator": "^2.1.30",
-    "gatsby-plugin-react-helmet": "^3.0.1",
-    "gatsby-plugin-sass": "^2.0.3",
-    "gatsby-source-filesystem": "^2.0.7",
-    "gatsby-transformer-remark": "^2.1.11",
-    "react": "^16.5.1",
-    "react-alice-carousel": "^1.15.3",
-    "react-bootstrap": "^1.0.0-beta.11",
-    "react-dom": "^16.5.1",
-    "react-grid-gallery": "^0.5.5",
-    "react-helmet": "^5.2.0",
-    "react-social-icons": "^4.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "bootstrap-scss": "^4.1.3",
-    "node-sass": "^4.10.0"
-  }
+    "prettier": "^2.6.2"
+  },
+  "workspaces": ["packages/**", "site"]
 }
