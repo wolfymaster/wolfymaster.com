@@ -1,0 +1,74 @@
+service: wolfymaster-api
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: us-west-2
+  environment:
+    MAILGUN_API_KEY: ${env:MAILGUN_API_KEY}
+    MAILGUN_DOMAIN: ${env:MAILGUN_DOMAIN}
+    RECIPIENT_EMAIL: ${env:RECIPIENT_EMAIL, 'wolfy@wolfymaster.com'}
+    NONCE_SECRET: ${env:NONCE_SECRET}
+    RATE_LIMIT_TABLE: ${self:service}-rate-limits-${sls:stage}
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:Query
+          Resource:
+            - !GetAtt RateLimitTable.Arn
+
+plugins:
+  - serverless-esbuild
+
+custom:
+  esbuild:
+    bundle: true
+    minify: false
+    sourcemap: true
+    exclude:
+      - "@aws-sdk/client-dynamodb"
+      - "@aws-sdk/lib-dynamodb"
+    target: node20
+    platform: node
+    concurrency: 10
+
+functions:
+  submitQuote:
+    handler: src/handlers/quotes.handler
+    events:
+      - http:
+          path: /quotes
+          method: post
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+              - X-Form-Nonce
+            allowCredentials: false
+
+resources:
+  Resources:
+    RateLimitTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:service}-rate-limits-${sls:stage}
+        AttributeDefinitions:
+          - AttributeName: pk
+            AttributeType: S
+        KeySchema:
+          - AttributeName: pk
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        TimeToLiveSpecification:
+          AttributeName: ttl
+          Enabled: true
