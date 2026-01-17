@@ -131,7 +131,7 @@ export function TwitchHub() {
                 
                 {schedule && schedule.length > 0 ? (
                   <div className="space-y-3">
-                    {schedule.slice(0, 5).map((segment) => (
+                    {schedule.slice(0, 2).map((segment) => (
                       <div
                         key={segment.id}
                         className="p-3 rounded-lg bg-muted/50 border border-border"

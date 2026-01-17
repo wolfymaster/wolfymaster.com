@@ -31,7 +31,7 @@ export function IntroCTASection() {
             <div className="flex flex-wrap items-center gap-3">
               <Badge variant="secondary" data-testid="badge-role">
                 <Code2 className="w-3 h-3 mr-1" />
-                Director of Software Engineering
+                Software Engineering Leader
               </Badge>
               <Badge variant="outline" data-testid="badge-experience">
                 <Briefcase className="w-3 h-3 mr-1" />
@@ -47,12 +47,6 @@ export function IntroCTASection() {
               <span className="text-foreground">Hi, I'm </span>
               <span className="text-foreground font-extrabold">Paul Sherer</span>
             </h2>
-
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl" data-testid="text-intro-paragraph">
-              Experienced Director of Software Engineering with expertise in project management 
-              and developing software products. I drive engineering strategies, define roadmaps, 
-              and deliver MVPs that transform customer feedback into successful outcomes.
-            </p>
 
             <p className="text-base text-muted-foreground max-w-2xl" data-testid="text-intro-secondary">
               Since 2009, I've provided software engineering expertise for over 50 clients, 

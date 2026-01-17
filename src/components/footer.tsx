@@ -12,7 +12,6 @@ const socialLinks = [
 
 const quickLinks = [
   { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
   { href: "#twitch", label: "Twitch" },
   { href: "#contact", label: "Contact" },
@@ -42,16 +41,16 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <a 
               href="#" 
-              className="flex items-center gap-2 text-xl font-bold mb-4 flex-wrap"
+              className="flex items-center text-xl font-bold mb-4 flex-wrap"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               data-testid="link-footer-logo"
             >
-              <Code2 className="h-6 w-6 text-primary" />
+              <Code2 className="h-6 w-6 text-primary mr-2" />
               <span className="text-primary" data-testid="text-footer-logo-1">Wolfy</span>
               <span className="text-foreground" data-testid="text-footer-logo-2">Master</span>
             </a>
             <p className="text-sm text-muted-foreground mb-6" data-testid="text-footer-about">
-              Director of Software Engineering with 15+ years of experience building 
+              Software Engineer with 15+ years of experience building 
               solutions across Cybersecurity, Manufacturing, Construction, and more.
             </p>
             <div className="flex flex-wrap gap-2">
@@ -132,7 +131,7 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 flex-wrap">
             <p className="text-sm text-muted-foreground" data-testid="text-copyright">
-              <span data-testid="text-copyright-year">{new Date().getFullYear()}</span> Paul Sherer. All rights reserved.
+              <span data-testid="text-copyright-year">{new Date().getFullYear()}</span> WolfyMaster. All rights reserved.
             </p>
             <p className="text-sm text-muted-foreground" data-testid="text-tagline">
               Architecture-first software that actually scales

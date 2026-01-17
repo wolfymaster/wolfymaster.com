@@ -1,8 +1,8 @@
-import type { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
+import type { APIRoute } from "astro";
 import { z } from "zod";
-import { sendQuoteEmail } from "../lib/mailgun";
-import { validateNonce } from "../lib/nonce";
-import { checkRateLimit } from "../lib/rateLimit";
+import { sendQuoteEmail } from "@/lib/server/mailgun";
+import { validateNonce } from "@/lib/server/nonce";
+import { checkRateLimit, getClientIp } from "@/lib/server/rateLimit";
 
 const quoteRequestSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -14,54 +14,24 @@ const quoteRequestSchema = z.object({
   website: z.string().max(0, "Invalid submission").optional(),
 });
 
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "Content-Type, X-Form-Nonce",
-  "Access-Control-Allow-Methods": "POST, OPTIONS",
-};
-
 function jsonResponse(
-  statusCode: number,
+  status: number,
   body: object,
   extraHeaders?: Record<string, string>
-): APIGatewayProxyResult {
-  return {
-    statusCode,
+): Response {
+  return new Response(JSON.stringify(body), {
+    status,
     headers: {
       "Content-Type": "application/json",
-      ...corsHeaders,
       ...extraHeaders,
     },
-    body: JSON.stringify(body),
-  };
+  });
 }
 
-function getClientIp(event: APIGatewayProxyEvent): string {
-  // Try to get the real IP from various headers
-  const forwardedFor = event.headers["X-Forwarded-For"] || event.headers["x-forwarded-for"];
-  if (forwardedFor) {
-    // X-Forwarded-For can contain multiple IPs; the first one is the client
-    return forwardedFor.split(",")[0].trim();
-  }
-
-  return event.requestContext.identity?.sourceIp || "unknown";
-}
-
-export async function handler(
-  event: APIGatewayProxyEvent
-): Promise<APIGatewayProxyResult> {
-  // Handle preflight OPTIONS request
-  if (event.httpMethod === "OPTIONS") {
-    return {
-      statusCode: 200,
-      headers: corsHeaders,
-      body: "",
-    };
-  }
-
+export const POST: APIRoute = async ({ request }) => {
   try {
     // 1. Validate nonce from header
-    const nonce = event.headers["X-Form-Nonce"] || event.headers["x-form-nonce"];
+    const nonce = request.headers.get("x-form-nonce");
     const nonceResult = validateNonce(nonce);
     if (!nonceResult.valid) {
       console.warn("Nonce validation failed:", nonceResult.error);
@@ -72,8 +42,8 @@ export async function handler(
     }
 
     // 2. Check rate limit
-    const clientIp = getClientIp(event);
-    const rateLimitResult = await checkRateLimit(clientIp);
+    const clientIp = getClientIp(request);
+    const rateLimitResult = checkRateLimit(clientIp);
     if (!rateLimitResult.allowed) {
       console.warn(`Rate limit exceeded for IP: ${clientIp}`);
       return jsonResponse(
@@ -90,13 +60,9 @@ export async function handler(
     }
 
     // 3. Parse request body
-    if (!event.body) {
-      return jsonResponse(400, { error: "Request body is required" });
-    }
-
     let parsedBody: unknown;
     try {
-      parsedBody = JSON.parse(event.body);
+      parsedBody = await request.json();
     } catch {
       return jsonResponse(400, { error: "Invalid JSON in request body" });
     }
@@ -143,4 +109,7 @@ export async function handler(
       message: "Failed to process quote request. Please try again later.",
     });
   }
-}
+};
+
+// Disable prerendering for this API route
+export const prerender = false;

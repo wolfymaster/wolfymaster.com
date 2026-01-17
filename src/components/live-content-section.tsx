@@ -1,5 +1,5 @@
 import { useState, useMemo, useRef } from "react";
-import { Play, ChevronLeft, ChevronRight } from "lucide-react";
+import { Play } from "lucide-react";
 import { SiYoutube, SiTwitch } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -132,47 +132,14 @@ export function LiveContentSection() {
     return clip.embedUrl;
   };
 
-  const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const scrollAmount = 240;
-      scrollRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
 
   return (
     <section id="live-content" className="relative py-4 bg-muted/30 border-b border-border">
       <div className="relative max-w-[100vw] mx-auto">
         <div className="flex items-center gap-4">
-          <div className="hidden sm:flex items-center gap-2 pl-4 sm:pl-6 lg:pl-8 flex-shrink-0">
-            <span className="text-sm font-medium text-foreground whitespace-nowrap" data-testid="text-live-content-label">
-              Latest Content
-            </span>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => scroll("left")}
-              className="h-8 w-8"
-              data-testid="button-scroll-left"
-            >
-              <ChevronLeft className="h-4 w-4" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => scroll("right")}
-              className="h-8 w-8"
-              data-testid="button-scroll-right"
-            >
-              <ChevronRight className="h-4 w-4" />
-            </Button>
-          </div>
-
-          <div 
+          <div
             ref={scrollRef}
-            className="flex gap-3 overflow-x-auto scrollbar-hide px-4 sm:px-0 sm:pr-6 lg:pr-8 py-2 scroll-smooth flex-1"
+            className="flex gap-3 overflow-x-auto scrollbar-hide px-4 sm:px-0 sm:pr-6 lg:pr-8 py-2 scroll-smooth flex-1 justify-center"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {featuredClips.map((clip, index) => (

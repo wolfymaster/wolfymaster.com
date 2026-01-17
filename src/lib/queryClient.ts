@@ -1,7 +1,5 @@
-import { QueryClient, QueryFunction } from "@tanstack/react-query";
-
-// API base URL - uses environment variable in production, empty string for local dev
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+import { QueryClient } from "@tanstack/react-query";
+import type { QueryFunction } from "@tanstack/react-query";
 
 async function throwIfResNotOk(res: Response) {
   if (!res.ok) {
@@ -16,17 +14,16 @@ export async function apiRequest(
   data?: unknown | undefined,
   customHeaders?: Record<string, string>,
 ): Promise<Response> {
-  const fullUrl = url.startsWith("http") ? url : `${API_BASE_URL}${url}`;
   const headers: Record<string, string> = {
     ...(data ? { "Content-Type": "application/json" } : {}),
     ...customHeaders,
   };
 
-  const res = await fetch(fullUrl, {
+  const res = await fetch(url, {
     method,
     headers,
     body: data ? JSON.stringify(data) : undefined,
-    credentials: url.startsWith("http") ? "omit" : "include",
+    credentials: "include",
   });
 
   await throwIfResNotOk(res);

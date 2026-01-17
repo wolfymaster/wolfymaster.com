@@ -5,10 +5,9 @@ import { SiGithub, SiLinkedin, SiTwitch } from "react-icons/si";
 
 const navLinks = [
   { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
-  { href: "#podcast", label: "Podcast" },
   { href: "#twitch", label: "Twitch" },
+  { href: "#podcast", label: "Podcast" },
+  { href: "#experience", label: "Experience" },
   { href: "#contact", label: "Contact" },
 ];
 

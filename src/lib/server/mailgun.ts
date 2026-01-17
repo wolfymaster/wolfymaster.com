@@ -28,9 +28,9 @@ const budgetLabels: Record<string, string> = {
 };
 
 export async function sendQuoteEmail(data: QuoteEmailData): Promise<void> {
-  const apiKey = process.env.MAILGUN_API_KEY;
-  const domain = process.env.MAILGUN_DOMAIN;
-  const recipientEmail = process.env.RECIPIENT_EMAIL || "wolfy@wolfymaster.com";
+  const apiKey = import.meta.env.MAILGUN_API_KEY;
+  const domain = import.meta.env.MAILGUN_DOMAIN;
+  const recipientEmail = import.meta.env.RECIPIENT_EMAIL || "wolfy@wolfymaster.com";
 
   if (!apiKey || !domain) {
     throw new Error("Mailgun configuration missing");

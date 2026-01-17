@@ -4,10 +4,10 @@
  * Where signature = HMAC-SHA256(timestamp, secret)
  */
 export async function generateNonce(): Promise<string> {
-  const secret = import.meta.env.VITE_NONCE_SECRET;
+  const secret = import.meta.env.PUBLIC_NONCE_SECRET;
 
   if (!secret) {
-    console.warn("VITE_NONCE_SECRET not configured");
+    console.warn("PUBLIC_NONCE_SECRET not configured");
     return "";
   }
 

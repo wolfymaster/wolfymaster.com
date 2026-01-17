@@ -70,7 +70,7 @@ export function QuoteRequestForm() {
   const submitMutation = useMutation({
     mutationFn: async (data: InsertQuoteRequest) => {
       const nonce = await generateNonce();
-      return apiRequest("POST", "/quotes", data, {
+      return apiRequest("POST", "/api/quotes", data, {
         "X-Form-Nonce": nonce,
       });
     },
@@ -106,8 +106,7 @@ export function QuoteRequestForm() {
             Let's Talk About Your Project
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto" data-testid="text-contact-description">
-            Have a project in mind? Fill out the form below and I'll get back to you 
-            within 24-48 hours with a detailed proposal.
+            Have a project in mind? Fill out the form.
           </p>
         </div>
 
@@ -332,7 +331,7 @@ export function QuoteRequestForm() {
                     <MapPin className="h-5 w-5 text-muted-foreground" />
                     <div>
                       <p className="font-medium text-foreground" data-testid="text-location-label">Location</p>
-                      <p className="text-sm text-muted-foreground" data-testid="text-location-value">Austin, Texas (CST)</p>
+                      <p className="text-sm text-muted-foreground" data-testid="text-location-value">Erie, PA (EST)</p>
                     </div>
                   </div>
                 </div>

@@ -1,4 +1,4 @@
-import { createHmac } from "crypto";
+import { createHmac } from "node:crypto";
 
 const NONCE_VALIDITY_MS = 5 * 60 * 1000; // 5 minutes
 
@@ -7,11 +7,11 @@ const NONCE_VALIDITY_MS = 5 * 60 * 1000; // 5 minutes
  * Nonce format: timestamp.signature
  * Where signature = HMAC-SHA256(timestamp, secret)
  */
-export function validateNonce(nonce: string | undefined): {
+export function validateNonce(nonce: string | null): {
   valid: boolean;
   error?: string;
 } {
-  const secret = process.env.NONCE_SECRET;
+  const secret = import.meta.env.NONCE_SECRET;
 
   if (!secret) {
     console.warn("NONCE_SECRET not configured, skipping nonce validation");
@@ -56,14 +56,4 @@ export function validateNonce(nonce: string | undefined): {
   }
 
   return { valid: true };
-}
-
-/**
- * Generates a nonce (for testing purposes).
- * In production, this is done on the frontend.
- */
-export function generateNonce(secret: string): string {
-  const timestamp = Date.now().toString();
-  const signature = createHmac("sha256", secret).update(timestamp).digest("hex");
-  return `${timestamp}.${signature}`;
 }
