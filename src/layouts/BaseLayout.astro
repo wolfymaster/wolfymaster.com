@@ -18,11 +18,156 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="author" content="Paul (WolfyMaster)" />
+    <meta name="theme-color" content="#8B5CF6" />
+    <link rel="canonical" href="https://wolfymaster.com" />
+    
+    <!-- Geo Meta Tags for Local SEO -->
+    <meta name="geo.region" content="US-PA" />
+    <meta name="geo.placename" content="Erie, Pennsylvania" />
+    <meta name="geo.position" content="42.1292;-80.0851" />
+    <meta name="ICBM" content="42.1292, -80.0851" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wolfymaster.com" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="WolfyMaster" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@wolfymaster" />
+    <meta name="twitter:creator" content="@wolfymaster" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <title>{title}</title>
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "WolfyMaster",
+      "alternateName": "WolfyMaster Software Development",
+      "description": "Professional web development and software engineering services in Erie, Warren, and Northwest Pennsylvania. Watch live coding on Twitch and learn programming online.",
+      "url": "https://wolfymaster.com",
+      "telephone": "716.241.2456",
+      "email": "wolfy@wolfymaster.com",
+      "priceRange": "$$",
+      "image": "https://wolfymaster.com/favicon.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Erie",
+        "addressRegion": "PA",
+        "postalCode": "16501",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Erie",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Pennsylvania"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Warren",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Pennsylvania"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Northwest Pennsylvania"
+        }
+      ],
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "42.1292",
+          "longitude": "-80.0851"
+        },
+        "geoRadius": "100000"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Software Development Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Development Erie Pennsylvania",
+              "description": "Custom web development services in Erie, Warren, and Northwest Pennsylvania",
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": "WolfyMaster"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Software Engineering Services",
+              "description": "Professional software engineering and architecture services for businesses in Northwest Pennsylvania",
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": "WolfyMaster"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Live Coding on Twitch",
+              "description": "Watch live programming sessions on Twitch.tv, learn programming live, and watch software development in real-time",
+              "provider": {
+                "@type": "Person",
+                "name": "Paul (WolfyMaster)"
+              }
+            }
+          }
+        ]
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Paul",
+        "alternateName": "WolfyMaster",
+        "jobTitle": "Software Engineer",
+        "description": "Software Engineer with 15+ years experience serving Erie, Warren, and Northwest Pennsylvania",
+        "sameAs": [
+          "https://twitch.tv/wolfymaster",
+          "https://github.com/wolfymaster",
+          "https://linkedin.com/in/wolfymaster",
+          "https://twitter.com/wolfymaster"
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "50"
+      },
+      "sameAs": [
+        "https://twitch.tv/wolfymaster",
+        "https://github.com/wolfymaster",
+        "https://linkedin.com/in/wolfymaster",
+        "https://twitter.com/wolfymaster",
+        "https://youtube.com/wolfymaster"
+      ]
+    }
+    </script>
   </head>
   <body>
     <slot />

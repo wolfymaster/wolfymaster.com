@@ -79,15 +79,17 @@ export function LiveShowcaseHero() {
 
           <div className="space-y-4">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight" data-testid="heading-showcase">
-              <span className="text-foreground">WolfyMaster</span>
+              <span className="text-foreground">Software Engineer</span>
+              <span className="block text-primary mt-2">Warren, Pennsylvania</span>
             </h1>
             <p className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground font-medium" data-testid="text-showcase-subtitle">
-              Architecture-First Engineering
+              Live Coding on Twitch | Software Development
             </p>
 
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto" data-testid="text-showcase-tagline">
-              Driving engineering strategies and delivering MVPs that achieve organizational goals.
-              <span className="text-foreground font-medium block sm:inline"> 50+ clients served since 2009.</span>
+              Driving engineering strategies and achieving organizational goals.
+              <div className="text-foreground font-medium block"> Serving Erie, Warren, and Northwest Pennsylvania.</div>
+              <div className="text-foreground font-medium block">50+ clients served since 2009.</div>
             </p>
           </div>
 

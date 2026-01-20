@@ -7,10 +7,10 @@ import { Badge } from "@/components/ui/badge";
 import type { TwitchStreamStatus, TwitchScheduleSegment } from "@/types";
 
 const streamFeatures = [
-  "Live coding sessions",
-  "Open source development",
-  "Tech discussions",
-  "Community hangouts",
+  "Live coding on Twitch",
+  "Watch programming live",
+  "Learn programming online",
+  "Software development streams",
 ];
 
 export function TwitchHub() {
@@ -33,11 +33,13 @@ export function TwitchHub() {
             Live Content
           </Badge>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4" data-testid="heading-twitch">
-            Join the Live Coding Sessions
+            <span className="block">Watch Live Programming on Twitch</span>
+            <span className="block text-2xl sm:text-3xl text-primary mt-2">Learn Programming Live</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto" data-testid="text-twitch-description">
-            Watch me build real projects live on Twitch. Ask questions, learn techniques, 
-            and hang out with the community.
+            <strong>Live coding on Twitch</strong> from a software engineer in Erie, Pennsylvania. 
+            <strong>Watch programming live</strong>, <strong>learn software development online</strong>, and join <strong>Twitch.tv programmers</strong> building real projects.
+            Free educational content for aspiring developers.
           </p>
         </div>
 
@@ -186,24 +188,24 @@ export function TwitchHub() {
                 <h3 className="font-semibold text-foreground mb-4" data-testid="heading-why-watch">
                   Why Watch?
                 </h3>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start gap-2 flex-wrap" data-testid="text-why-watch-0">
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2" />
-                    Learn real-world development techniques
-                  </li>
-                  <li className="flex items-start gap-2 flex-wrap" data-testid="text-why-watch-1">
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2" />
-                    See how Woofx3 is built from scratch
-                  </li>
-                  <li className="flex items-start gap-2 flex-wrap" data-testid="text-why-watch-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2" />
-                    Ask questions and get real-time answers
-                  </li>
-                  <li className="flex items-start gap-2 flex-wrap" data-testid="text-why-watch-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2" />
-                    Join a supportive developer community
-                  </li>
-                </ul>
+                 <ul className="space-y-2 text-sm text-muted-foreground">
+                   <li className="flex items-start gap-2 flex-wrap" data-testid="text-why-watch-0">
+                     <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2" />
+                     Learn programming live on Twitch
+                   </li>
+                   <li className="flex items-start gap-2 flex-wrap" data-testid="text-why-watch-1">
+                     <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2" />
+                     Watch software development in real-time
+                   </li>
+                   <li className="flex items-start gap-2 flex-wrap" data-testid="text-why-watch-2">
+                     <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2" />
+                     Interactive live coding sessions with Q&A
+                   </li>
+                   <li className="flex items-start gap-2 flex-wrap" data-testid="text-why-watch-3">
+                     <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2" />
+                     Join Twitch.tv programmers community
+                   </li>
+                 </ul>
               </CardContent>
             </Card>
           </div>

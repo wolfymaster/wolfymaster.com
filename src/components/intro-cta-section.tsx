@@ -44,15 +44,15 @@ export function IntroCTASection() {
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight" data-testid="heading-about">
-              <span className="text-foreground">Hi, I'm </span>
-              <span className="text-foreground font-extrabold">Paul</span>
+              <span className="text-foreground block">Software Development </span>
+              <span className="text-foreground font-extrabold">in Northwest Pennsylvania</span>
             </h2>
 
             <p className="text-base text-muted-foreground max-w-2xl" data-testid="text-intro-secondary">
-              Since 2009, I've provided software engineering expertise for over 50 clients, 
-              delivering solutions ranging from web development to complex enterprise systems. 
-              I design and maintain APIs, backend systems, and data processing pipelines that 
-              enable businesses to derive actionable insights.
+              Hi, I'm Paul. Based in <strong>Erie, Pennsylvania</strong>, serving <strong>Warren and Northwest Pennsylvania</strong>, 
+              I've provided <strong>software engineering</strong> and <strong>web development</strong> expertise for over 50 clients since 2009.
+              From web applications to complex enterprise systems, I deliver scalable solutions.
+              I also <strong>stream live coding on Twitch</strong>, where you can <strong>watch programming live</strong> and <strong>learn software development online</strong>.
             </p>
 
             <p className="text-base text-muted-foreground max-w-2xl" data-testid="text-intro-instructor">

@@ -55,8 +55,10 @@ export function Footer() {
               <span className="text-foreground" data-testid="text-footer-logo-2">Master</span>
             </a>
             <p className="text-sm text-muted-foreground mb-6" data-testid="text-footer-about">
-              Software Engineer with 15+ years of experience building 
-              solutions across Cybersecurity, Manufacturing, Construction, and more.
+              <strong>Software development agency</strong> in <strong>Northwest Pennsylvania</strong>. 
+              Professional <strong>web development</strong> and <strong>software engineering services</strong> in 
+              <strong>Erie</strong>, <strong>Warren</strong>, and surrounding areas. 
+              Watch <strong>live coding on Twitch</strong>. 15+ years building scalable solutions.
             </p>
             <div className="flex flex-wrap gap-2">
               {socialLinks.map((link) => (
@@ -114,8 +116,10 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-foreground mb-4" data-testid="heading-footer-connect">Connect</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li data-testid="text-footer-location">Erie, Pennsylvania</li>
-              <li data-testid="text-footer-availability">Available for freelance</li>
+              <li data-testid="text-footer-location">
+                <strong>Erie, Pennsylvania</strong> | Serving Warren & Northwest PA
+              </li>
+              <li data-testid="text-footer-availability">Web Development & Software Engineering Services</li>
               <li>
                 <a
                   href="#contact"
@@ -126,7 +130,7 @@ export function Footer() {
                   className="text-primary hover:underline"
                   data-testid="link-footer-quote"
                 >
-                  Request a Quote
+                  Request a Quote for Web Development
                 </a>
               </li>
             </ul>
