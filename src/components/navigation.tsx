@@ -37,7 +37,7 @@ export function Navigation() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4 h-16 flex-wrap">
           <a 
-            href="#" 
+            href="/" 
             className="flex items-center text-xl font-bold flex-wrap"
             data-testid="link-logo"
           >

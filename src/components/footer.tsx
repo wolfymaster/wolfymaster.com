@@ -40,9 +40,14 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
           <div className="col-span-2 md:col-span-1">
             <a 
-              href="#" 
+              href="/" 
               className="flex items-center text-xl font-bold mb-4 flex-wrap"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              onClick={(e) => {
+                if (window.location.pathname === '/') {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
               data-testid="link-footer-logo"
             >
               <Code2 className="h-6 w-6 text-primary mr-2" />

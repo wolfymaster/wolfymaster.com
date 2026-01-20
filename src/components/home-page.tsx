@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { queryClient } from "@/lib/queryClient";
 
 import { Navigation } from "@/components/navigation";
-import { LiveContentSection } from "@/components/live-content-section";
+// import { LiveContentSection } from "@/components/live-content-section";
 import { LiveShowcaseHero } from "@/components/live-showcase-hero";
 import { FeaturedProject } from "@/components/featured-project";
 import { IntroCTASection } from "@/components/intro-cta-section";
@@ -23,7 +23,7 @@ export function HomePage() {
           <div className="min-h-screen bg-background">
             <Navigation />
             <main className="pt-16">
-              <LiveContentSection />
+              {/* <LiveContentSection /> */}
               <LiveShowcaseHero />
               <FeaturedProject />
               <IntroCTASection />

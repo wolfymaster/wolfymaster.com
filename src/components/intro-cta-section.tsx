@@ -45,7 +45,7 @@ export function IntroCTASection() {
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight" data-testid="heading-about">
               <span className="text-foreground">Hi, I'm </span>
-              <span className="text-foreground font-extrabold">Paul Sherer</span>
+              <span className="text-foreground font-extrabold">Paul</span>
             </h2>
 
             <p className="text-base text-muted-foreground max-w-2xl" data-testid="text-intro-secondary">
@@ -83,14 +83,6 @@ export function IntroCTASection() {
             >
               Request a Quote
               <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              onClick={() => scrollToSection("#projects")}
-              data-testid="button-view-projects-cta"
-            >
-              View Projects
             </Button>
           </div>
         </div>
