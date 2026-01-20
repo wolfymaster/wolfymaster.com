@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { NotFoundPage } from '../components/not-found-page';
+---
+
+<BaseLayout title="404 - Page Not Found | WolfyMaster" description="The page you're looking for doesn't exist.">
+  <NotFoundPage client:only="react" />
+</BaseLayout>

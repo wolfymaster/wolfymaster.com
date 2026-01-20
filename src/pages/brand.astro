@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { BrandPage } from '../components/brand-page';
+---
+
+<BaseLayout title="Brand Guide | WolfyMaster" description="WolfyMaster brand and style guide - colors, typography, components, and design principles.">
+  <BrandPage client:only="react" />
+</BaseLayout>
